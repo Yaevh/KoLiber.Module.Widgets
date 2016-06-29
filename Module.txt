@@ -1,0 +1,10 @@
+Name: KoLiber.Module.Widgets
+AntiForgery: enabled
+Author: Tomasz Malinowski
+Website: https://github.com/Yaevh/KoLiber.Module.Widgets
+Version: 0.01
+OrchardVersion: 1.10
+Description: Site specific widgets for KoLiber.org
+Features:
+    KoLiber.Module.Widgets:
+        Description: Description for feature KoLiber.Module.Widgets.
