@@ -1,2 +1,2 @@
-# Orchard.KoLiber.Module.Widgets
+# KoLiber.Module.Widgets
 Site specific widgets for KoLiber.org
