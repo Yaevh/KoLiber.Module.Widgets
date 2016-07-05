@@ -5,25 +5,25 @@
     <div>
         @Html.LabelFor(m => m.DotpayId, T("Dotpay Id"))
         @Html.EditorFor(m => m.DotpayId)
-        @Html.ValidationMessage("DotpayId", "*")
+        @Html.ValidationMessageFor(m => m.DotpayId, "*")
 		<span class="hint"></span>
     </div>
     <div>
         @Html.LabelFor(m => m.SuggestedAmount, T("Suggested Amount"))
         @Html.EditorFor(m => m.SuggestedAmount)
-        @Html.ValidationMessage("SuggestedAmount", "*")
+        @Html.ValidationMessageFor(m => m.SuggestedAmount, "*")
 		<span class="hint"></span>
     </div>
     <div>
         @Html.LabelFor(m => m.Purpose, T("Purpose"))
         @Html.EditorFor(m => m.Purpose)
-        @Html.ValidationMessage("Purpose", "*")
+        @Html.ValidationMessageFor(m => m.Purpose, "*")
 		<span class="hint"></span>
     </div>
     <div>
         @Html.LabelFor(m => m.ReturnUrl, T("Return Url"))
         @Html.EditorFor(m => m.ReturnUrl)
-        @Html.ValidationMessage("ReturnUrl", "*")
+        @Html.ValidationMessageFor(m => m.ReturnUrl, "*")
 		<span class="hint"></span>
     </div>
 </fieldset>
