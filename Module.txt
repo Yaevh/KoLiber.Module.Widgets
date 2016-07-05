@@ -6,5 +6,6 @@ Version: 0.01
 OrchardVersion: 1.10
 Description: Site specific widgets for KoLiber.org
 Features:
-    KoLiber.Module.Widgets:
-        Description: Description for feature KoLiber.Module.Widgets.
+    KoLiber.Widgets.Dotpay:
+		Name: Dotpay Donation Widget
+        Description: Allows users to make donations via dotpay.pl

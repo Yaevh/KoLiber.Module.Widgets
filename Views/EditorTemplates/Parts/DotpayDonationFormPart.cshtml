@@ -1,0 +1,29 @@
+﻿@model KoLiber.Module.Widgets.Models.DotpayDonationFormPart
+
+<fieldset>
+    <legend></legend>
+    <div>
+        @Html.LabelFor(m => m.DotpayId, T("Dotpay Id"))
+        @Html.EditorFor(m => m.DotpayId)
+        @Html.ValidationMessage("DotpayId", "*")
+		<span class="hint"></span>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.SuggestedAmount, T("Suggested Amount"))
+        @Html.EditorFor(m => m.SuggestedAmount)
+        @Html.ValidationMessage("SuggestedAmount", "*")
+		<span class="hint"></span>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Purpose, T("Purpose"))
+        @Html.EditorFor(m => m.Purpose)
+        @Html.ValidationMessage("Purpose", "*")
+		<span class="hint"></span>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.ReturnUrl, T("Return Url"))
+        @Html.EditorFor(m => m.ReturnUrl)
+        @Html.ValidationMessage("ReturnUrl", "*")
+		<span class="hint"></span>
+    </div>
+</fieldset>

@@ -92,14 +92,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DotpayMigrations.cs" />
+    <Compile Include="Drivers\DotpayDonationFormPartDriver.cs" />
+    <Compile Include="Handlers\DotpayDonationFormPartHandler.cs" />
+    <Compile Include="Models\DotpayDonationFormPart.cs" />
+    <Compile Include="Models\DotpayDonationFormPartRecord.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts\DotpayDonationFormPart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\EditorTemplates\Parts\DotpayDonationFormPart.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

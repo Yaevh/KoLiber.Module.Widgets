@@ -16,4 +16,6 @@
     <Place Parts_Common_Metadata="-"/>
   </Match>
 -->
+<Place Parts_DotpayDonationFormPart="Content:2" />
+<Place Parts_DotpayDonationFormPart_Edit="Content:5" />
 </Placement>
