@@ -17,16 +17,16 @@ namespace KoLiber.Module.Widgets.Drivers {
 
         protected override DriverResult Display(DotpayDonationFormPart part, string displayType, dynamic shapeHelper) {
             // Put all your driver logic inside this method so that if your part is not being displayed no logic is run. Yay efficiency
-            return ContentShape("Parts_DotpayDonationFormPart",
+            return ContentShape($"Parts_{Prefix}",
                 () => {
                     return shapeHelper.Parts_DotpayDonationFormPart(Model: part);
                 });
         }
 
         protected override DriverResult Editor(DotpayDonationFormPart part, dynamic shapeHelper) {
-            return ContentShape("Parts_DotpayDonationFormPart_Edit",
+            return ContentShape($"Parts_{Prefix}_Edit",
                 () => shapeHelper.EditorTemplate(
-                    TemplateName: "Parts/DotpayDonationFormPart",
+                    TemplateName: $"Parts/{Prefix}",
                     Model: part,
                     Prefix: Prefix));
         }
@@ -38,29 +38,30 @@ namespace KoLiber.Module.Widgets.Drivers {
 
         protected override void Importing(DotpayDonationFormPart part, ImportContentContext context) {
             var partName = part.PartDefinition.Name;
-            var _DotpayId = context.Attribute(partName, "DotpayId");
+            var _DotpayId = context.Attribute(partName, nameof(DotpayDonationFormPart.DotpayId));
             if (_DotpayId != null) {
                 part.DotpayId = Convert.ToInt32(_DotpayId);
             }
-            var _SuggestedAmount = context.Attribute(partName, "SuggestedAmount");
+            var _SuggestedAmount = context.Attribute(partName, nameof(DotpayDonationFormPart.SuggestedAmount));
             if (_SuggestedAmount != null) {
                 part.SuggestedAmount = Convert.ToDouble(_SuggestedAmount);
             }
-            var _Purpose = context.Attribute(partName, "Purpose");
+            var _Purpose = context.Attribute(partName, nameof(DotpayDonationFormPart.Purpose));
             if (_Purpose != null) {
                 part.Purpose = _Purpose;
             }
-            var _ReturnUrl = context.Attribute(partName, "ReturnUrl");
+            var _ReturnUrl = context.Attribute(partName, nameof(DotpayDonationFormPart.ReturnUrl));
             if (_ReturnUrl != null) {
                 part.ReturnUrl = _ReturnUrl;
             }
         }
 
         protected override void Exporting(DotpayDonationFormPart part, ExportContentContext context) {
-            context.Element(part.PartDefinition.Name).SetAttributeValue("DotpayId", part.DotpayId);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("SuggestedAmount", part.SuggestedAmount);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("Purpose", part.Purpose);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("ReturnUrl", part.ReturnUrl);
+            var partName = part.PartDefinition.Name;
+            context.Element(partName).SetAttributeValue(nameof(DotpayDonationFormPart.DotpayId), part.DotpayId);
+            context.Element(partName).SetAttributeValue(nameof(DotpayDonationFormPart.SuggestedAmount), part.SuggestedAmount);
+            context.Element(partName).SetAttributeValue(nameof(DotpayDonationFormPart.Purpose), part.Purpose);
+            context.Element(partName).SetAttributeValue(nameof(DotpayDonationFormPart.ReturnUrl), part.ReturnUrl);
         }
     }
 }
